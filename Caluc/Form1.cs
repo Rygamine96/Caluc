@@ -22,8 +22,15 @@ namespace Caluc
 
         private void button10_Click(object sender, EventArgs e)
         {
-            var d = new DataTable();
-            textBox1.Text = d.Compute(textBox1.Text, "").ToString(); 
+            try
+            {
+                var d = new DataTable();
+                textBox1.Text = d.Compute(textBox1.Text, "").ToString();
+            }
+            catch (Exception ex)
+            {
+                textBox1.Text = ex.Message;
+            }
         }
 
         private void button15_Click(object sender, EventArgs e)
